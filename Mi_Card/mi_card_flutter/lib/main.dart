@@ -21,10 +21,21 @@ class MyApp extends StatelessWidget {
                 'Aarav Chandra',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 40.0,
+                  fontSize: 50.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Sacramento',
+                ),
+              ),
+              Text(
+                'AWESOME DEVELOPER',
+                style: TextStyle(
+                  fontFamily: 'Source Sans Pro',
+                  color: Colors.teal.shade100,
+                  letterSpacing: 2.5,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
-              )
+              ),
             ],
           ),
         ),
