@@ -43,6 +43,7 @@ class DicePage extends StatelessWidget {
           ),
           Expanded(
             child: FlatButton(
+              // it expects an "onPressed" whichmust have void callback function.
               onPressed: () {
                 print('Touched right button');
               },
