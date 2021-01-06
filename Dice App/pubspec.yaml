@@ -22,3 +22,7 @@ flutter:
 
   assets:
   - images/
+  fonts:
+    - family: Sacramento
+      fonts:
+      - asset: fonts/Sacramento-Regular.ttf
