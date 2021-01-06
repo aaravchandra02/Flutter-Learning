@@ -118,15 +118,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// Row(
-
-//                     children: [
-
-//                       // To separate the number from icon, we add a SizedBox:
-//                       SizedBox(
-//                         width: 10,
-//                       ),
-
-//                     ],
-//                   ),
