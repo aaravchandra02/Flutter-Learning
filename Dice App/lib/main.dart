@@ -32,7 +32,6 @@ class DicePage extends StatefulWidget {
 
 // This is the 'state' part of a stateful widget
 class _DicePageState extends State<DicePage> {
-  final random = new Random();
   int leftDiceNumber = 1;
   int rightDiceNumber = 1;
   @override
@@ -54,7 +53,7 @@ class _DicePageState extends State<DicePage> {
                     // now we need to call the setState() - it tells that the state has been changed
                     setState(() {
                       print('Touched left button');
-                      leftDiceNumber = random.nextInt(6) + 1;
+                      leftDiceNumber = Random().nextInt(6) + 1;
                       print('$leftDiceNumber');
                     });
                   },
@@ -68,7 +67,7 @@ class _DicePageState extends State<DicePage> {
                   onPressed: () {
                     setState(() {
                       print('Touched right button');
-                      rightDiceNumber = random.nextInt(6) + 1;
+                      rightDiceNumber = Random().nextInt(6) + 1;
                     });
                   },
                   child: Image(
@@ -87,7 +86,7 @@ class _DicePageState extends State<DicePage> {
             children: [
               RaisedButton(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(70.0),
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
                 color: Colors.white,
                 elevation: 30.0,
@@ -97,14 +96,15 @@ class _DicePageState extends State<DicePage> {
                   style: TextStyle(
                     color: Colors.red,
                     fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'Source Sans Pro',
                   ),
                 ),
                 onPressed: () {
                   setState(() {
                     print('rolling both dices');
-                    leftDiceNumber = random.nextInt(6) + 1;
-                    rightDiceNumber = random.nextInt(6) + 1;
+                    leftDiceNumber = Random().nextInt(6) + 1;
+                    rightDiceNumber = Random().nextInt(6) + 1;
                   });
                 },
               ),
