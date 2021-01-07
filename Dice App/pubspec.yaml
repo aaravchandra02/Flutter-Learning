@@ -26,3 +26,6 @@ flutter:
     - family: Sacramento
       fonts:
       - asset: fonts/Sacramento-Regular.ttf
+    - family: Source Sans Pro
+      fonts:
+      - asset: fonts/SourceSansPro-Regular.ttf
