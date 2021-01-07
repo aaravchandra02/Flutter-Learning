@@ -85,31 +85,32 @@ class MyApp extends StatelessWidget {
                 ),
                 // Cards by default comes with white color.
                 Card(
-                    color: Colors.white,
-                    margin: EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 55.0,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.email,
-                          size: 40.0,
-                          semanticLabel: 'It is the Email Icon',
-                          textDirection: TextDirection.ltr,
-                          color: Colors.teal,
-                        ),
-                        title: Text(
-                          'flutter@dev.com',
-                          style: TextStyle(
-                            color: Colors.teal.shade900,
-                            fontFamily: 'Source Sans Pro',
-                            fontSize: 20,
-                          ),
+                  color: Colors.white,
+                  margin: EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 55.0,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.email,
+                        size: 40.0,
+                        semanticLabel: 'It is the Email Icon',
+                        textDirection: TextDirection.ltr,
+                        color: Colors.teal,
+                      ),
+                      title: Text(
+                        'flutter@dev.com',
+                        style: TextStyle(
+                          color: Colors.teal.shade900,
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 20,
                         ),
                       ),
-                    ))
+                    ),
+                  ),
+                )
               ],
             ),
           ),
