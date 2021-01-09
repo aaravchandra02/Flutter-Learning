@@ -5,7 +5,7 @@ void main() => runApp(
       MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Magic 8 Ball Decision App'),
+            title: Text('Ask Me Anything'),
             backgroundColor: Colors.blue[900],
           ),
           body: MagicApp(),
@@ -20,7 +20,7 @@ class MagicApp extends StatefulWidget {
 
 class _MagicAppState extends State<MagicApp> {
   int number = Random().nextInt(5) + 1;
-  int ran() {
+  void ran() {
     number = Random().nextInt(5) + 1;
   }
 
