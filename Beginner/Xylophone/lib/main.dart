@@ -10,11 +10,12 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$number.wav');
   }
 
-  void buildKey() {
+  //created it to reduce the redundancy of the code
+  Widget buildKey(thisColor) {
     // We use expanded to fill each button vertically.
-    Expanded(
+    return Expanded(
       child: FlatButton(
-        color: Colors.deepPurple,
+        color: thisColor,
         onPressed: () {
           sound(1);
         },
@@ -42,8 +43,13 @@ class XylophoneApp extends StatelessWidget {
             // To make it strecth horizontally, we use the 'crossAxisAlignment'
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              for i in 
-              buildKey()
+              buildKey(Colors.deepPurple),
+              buildKey(Colors.blue[900]),
+              buildKey(Colors.lightBlue),
+              buildKey(Colors.green),
+              buildKey(Colors.yellow),
+              buildKey(Colors.orange),
+              buildKey(Colors.red),
             ],
           ),
         ),
