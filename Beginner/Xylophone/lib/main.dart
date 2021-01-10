@@ -1,16 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
-void main() => runApp(XylophoneApp());
+void main() {
+  runApp(MyApp());
+}
 
-class XylophoneApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-          child: Container(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  final player = AudioCache();
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Xylophone App'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
