@@ -11,7 +11,7 @@ class XylophoneApp extends StatelessWidget {
   }
 
   //created it to reduce the redundancy of the code
-  Widget buildKey(Color thisColor, int soundNumber) {
+  Expanded buildKey(Color thisColor, int soundNumber) {
     // We use expanded to fill each button vertically.
     return Expanded(
       child: FlatButton(
