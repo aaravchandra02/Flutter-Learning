@@ -76,7 +76,7 @@ class _QuizPageState extends State<QuizPage> {
                 //The user picked true.
                 if (answers[questionNumber] == true) {
                   print('The Answer is correct');
-                  totalScore
+                  totalScore++;
                 } else {
                   print(
                       'The User answered Question $questionNumber Incorrectly\n');
