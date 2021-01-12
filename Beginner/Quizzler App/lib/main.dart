@@ -25,7 +25,9 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List<bool> answers = [false, true, true];
   List<Icon> scoreKeeper = [];
+  int totalScore = 0;
   List<String> questions = [
     'You can lead a cow down stairs but not up stairs.',
     'Approximately one quarter of human bones are in the feet.',
@@ -72,6 +74,13 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                if (answers[questionNumber] == true) {
+                  print('The Answer is correct');
+                  totalScore
+                } else {
+                  print(
+                      'The User answered Question $questionNumber Incorrectly\n');
+                }
                 setState(() {
                   scoreKeeper.add(Icon(Icons.check, color: Colors.green));
                   questionNumber++;
@@ -97,6 +106,13 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                if (answers[questionNumber] == false) {
+                  print('The Answer is correct');
+                  totalScore++;
+                } else {
+                  print(
+                      'The User answered Question $questionNumber Incorrectly\n');
+                }
                 setState(() {
                   scoreKeeper.add(Icon(Icons.close, color: Colors.red));
                   questionNumber++;
