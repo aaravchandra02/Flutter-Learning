@@ -1,6 +1,7 @@
 import 'question.dart';
 
 class QuizBrain {
+  int _questionNumber = 0;
   // we made it private as main.dart was able to change the value in its variable value to provide a wrong result
   List<Question> _questionBank = [
     Question('Some cats are actually allergic to humans', true),
@@ -30,13 +31,24 @@ class QuizBrain {
         true),
   ];
 
+  //
+  void nextQuestion() {
+    if (_questionNumber < _questionBank.length - 1) {
+      _questionNumber += 1;
+    }
+  }
+
   // to delgate the question as its now private
-  String getQuestionText(int questionNumber) {
-    return _questionBank[questionNumber].questionText;
+  String getQuestionText() {
+    return _questionBank[_questionNumber].questionText;
   }
 
   // to delegate the answer as it is now private
-  bool getQuestionAnswer(int questionNumber) {
-    return _questionBank[questionNumber].questionAnswer;
+  bool getQuestionAnswer() {
+    return _questionBank[_questionNumber].questionAnswer;
+  }
+
+  int getQuestionNumber() {
+    return _questionNumber;
   }
 }

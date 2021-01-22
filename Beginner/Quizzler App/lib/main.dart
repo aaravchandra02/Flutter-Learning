@@ -29,8 +29,8 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
   int totalScore = 0;
+  int currentQuestion;
 
-  int questionNumber = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,7 +43,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizBrain.getQuestionText(questionNumber),
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -71,16 +71,17 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
-                if (quizBrain.getQuestionAnswer(questionNumber) == true) {
+                if (quizBrain.getQuestionAnswer() == true) {
                   print('The Answer is correct');
                   totalScore++;
                 } else {
+                  currentQuestion = quizBrain.getQuestionNumber() + 1;
                   print(
-                      'The User answered Question $questionNumber+1 Incorrectly\n');
+                      'The User answered Question $currentQuestion Incorrectly\n');
                 }
                 setState(() {
                   scoreKeeper.add(Icon(Icons.check, color: Colors.green));
-                  questionNumber++;
+                  quizBrain.nextQuestion();
                 });
               },
             ),
@@ -103,16 +104,17 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
-                if (quizBrain.getQuestionAnswer(questionNumber) == false) {
+                if (quizBrain.getQuestionAnswer() == false) {
                   print('The Answer is correct');
                   totalScore++;
                 } else {
+                  currentQuestion = quizBrain.getQuestionNumber() + 1;
                   print(
-                      'The User answered Question $questionNumber Incorrectly\n');
+                      'The User answered Question $currentQuestion Incorrectly\n');
                 }
                 setState(() {
                   scoreKeeper.add(Icon(Icons.close, color: Colors.red));
-                  questionNumber++;
+                  quizBrain.nextQuestion();
                 });
               },
             ),
